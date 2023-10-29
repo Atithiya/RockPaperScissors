@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div id="container">
+      <p class="title">Rock Paper Scissors</p>
+      <button
+        onclick="
+      playGame('rock'); //เรียกใช้ playGame('ส่งอากิวเมนต์rock')
+    "
+        class="move-button"
+      >
+        Rock
+        <img src="./images/rock-emoji.png" class="move-icon" />
+      </button>
+
+      <button
+        onclick="
+      playGame('paper');
+    "
+        class="move-button"
+      >
+        Paper <img src="./images/paper-emoji.png" alt="" class="move-icon" />
+      </button>
+
+      <button
+        onclick="
+      playGame('scissors'); 
+    "
+        class="move-button"
+      >
+        Scissors
+        <img src="images/scissors-emoji.png" alt="" class="move-icon" />
+      </button>
+      <p class="js-result result"></p>
+      <p class="js-move"></p>
+
+      <p class="js-score score"></p>
+
+      <button
+        onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score'); //เมื่อคลิกReset scoreจะลบข้อมูลที่ถูกเก็บไว้ใน Local Storage ของเว็บเบราวเซอร์ภายใต้ชื่อ score.
+    updateScoreElement(); // เมื่อกดคลิก จะแสดง score ที่หน้า page
+    "
+        class="reset-score-button"
+      >
+        Reset score
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
